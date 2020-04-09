@@ -16,6 +16,6 @@ const server = http.createServer((req, res) => {
   }
 })
 
-// server.listen(3000, () => console.log('Server is up and running'))
+server.listen(3000, () => console.log('Server is up and running'))
 
-module.exports = server
+// module.exports = server
