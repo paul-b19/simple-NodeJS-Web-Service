@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/paul-b19/simple-NodeJS-Web-Service#readme",
   "dependencies": {
-    "cors": "^2.8.5",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
     "nodemon": "^2.0.2"
   }
 }

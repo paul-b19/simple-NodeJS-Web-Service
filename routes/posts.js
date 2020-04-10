@@ -1,16 +1,23 @@
 const express = require('express')
+const fetch = require('node-fetch')
 
 const router = express.Router()
 
-let posts = fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(resp => resp.json())
-    .then(resp => data = resp)
+const url = "https://jsonplaceholder.typicode.com/posts"
 
-// req.params.id
-  
+const fetchPosts = async url => {
+  try {
+    const resp = await fetch(url)
+    const posts = await resp.json()
+    return posts
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-router.get('/', (req,res) => {
-  res.render('posts', { posts: posts() })
+router.get('/', async (req,res) => {
+  const posts = await fetchPosts(url)
+  res.render('posts', { posts: posts })
 })
 
 module.exports = router
